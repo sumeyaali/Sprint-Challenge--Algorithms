@@ -16,7 +16,7 @@ def count_th(word):
     if th_string == word[0:2]:
         return 1 + count_th(word[2:])
     else:
-        return count_th(word[2:])
+        return count_th(word[1:])
 
-print(count_th('thoughthtfulth'))
+print(count_th('abcthxyz'))
 
