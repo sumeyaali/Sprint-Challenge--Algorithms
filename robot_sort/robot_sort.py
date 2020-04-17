@@ -95,9 +95,48 @@ class SortingRobot:
     def sort(self):
         """
         Sort the robot's list.
+        We are doing selection sort
+        self._list = l          # The list the robot is tasked with sorting
+        self._item = None       # The item the robot is holding
+        self._position = 0      # The list position the robot is at
+        self._light = "OFF"     # The state of the robot's light
+        self._time = 0          # A time counter (stretch)
+        TODO:
+        PLAN USING BUBBLE SORT
+        1. while ligh_on == True, 
+        1.5 
+        2. Compare items held at current index to item at the next indeX (SELF.POSITION)
+        3. if the current item is > than the item at self.position THEN SWAP
+        4. If current item < than item at self.position then MOVE RIGHT
+        ______________________________________________________________________________________________________________
         """
-        # Fill this out
-        pass
+        # for i in range(0, len(l) -1):
+        #     for j in range(i + 1, len(l)):
+        #         compare_item(l[i], l[j])
+        self.set_light_on = True
+        while self.light_is_on():
+            self.set_light_off()
+            self.swap_item()
+            
+            if self.can_move_right():
+                self.move_right()
+
+                if self.compare_item() == 1:
+                    self.swap_item()
+                                    
+                else:
+                    print('else for move- right')
+                    print("Current item being held", self._item)
+
+            if self.can_move_left():
+                self.move_left()
+
+                if self.compare_item() == -1:
+                    self.swap_item()
+
+                else: 
+                    print('else for move-left', self._item)
+    
 
 
 if __name__ == "__main__":
