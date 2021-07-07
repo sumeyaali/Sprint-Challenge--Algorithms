@@ -2,13 +2,13 @@
 
 ## Exercise I
 
-a)
+a) O(1) * O(n) => O(n)
 
 
-b)
+b) 0(n^2)
 
 
-c)
+c) O(1) 
 
 ## Exercise II
 
